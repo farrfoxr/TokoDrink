@@ -1,0 +1,77 @@
+.footer {
+  background-color: var(--text-color);
+  color: var(--main-color);
+  padding: 2rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo img {
+  max-height: 50px;
+  object-fit: contain;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-contact h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.contact-divider {
+  width: 96px;
+  height: 2px;
+  background-color: var(--main-color);
+  opacity: 0.3;
+  border-radius: 2px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-social a {
+  color: var(--main-color);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-social a {
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+/* Hover effects for social icons */
+.footer-social a:hover {
+  transform: translateY(-2px);
+}
+
+.footer-social a:hover {
+  color: var(--secondary-fade-color); /* Instagram pink */
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .footer-logo {
+    margin-bottom: 1rem;
+  }
+}

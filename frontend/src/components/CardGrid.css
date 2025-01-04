@@ -1,0 +1,25 @@
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.add-card {
+  border: 2px dashed var(--secondary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-card:hover {
+  background-color: rgba(76, 175, 80, 0.1);
+}
+
+.add-card-content {
+  text-align: center;
+  color: var(--secondary-color);
+}
+
