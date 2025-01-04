@@ -14,7 +14,7 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="navbar-brand">Logo</div>
+      <div className="navbar-brand"></div>
       <ul className="navbar-links">
         <li><a href="#" onClick={() => scrollToSection('top')}>Home</a></li>
         <li><a href="#" onClick={() => scrollToSection('locations')}>Our Locations</a></li>
