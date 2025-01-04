@@ -23,6 +23,15 @@ body {
   text-align: center;
 }
 
+/*utility cases*/
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.pointer-events-auto {
+  pointer-events: auto;
+}
+
 /* Add responsive design */
 @media (max-width: 768px) {
   /* Add responsive styles here */

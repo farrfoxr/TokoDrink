@@ -4,6 +4,14 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  z-index: 100;
 }
 
 .card-image {
@@ -16,11 +24,23 @@
   padding: 1rem;
 }
 
+.card-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.card-content .location,
+.card-content .phone {
+  margin: 0.25rem 0;
+  color: #666;
+}
+
 .card-actions {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
   display: none;
+  z-index: 101;
 }
 
 .card:hover .card-actions {
@@ -41,3 +61,9 @@
   background-color: #f44336;
 }
 
+.card-active {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;  /* Increased from 100 */
+  position: relative;
+}

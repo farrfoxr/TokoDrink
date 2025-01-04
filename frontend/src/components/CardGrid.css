@@ -1,8 +1,57 @@
+.grid-container {
+  position: relative;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.grid-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
-  padding: 2rem;
+  width: 100%;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 89;
+}
+
+.backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease, z-index 0s;
+}
+
+.card-hover, .card-active {
+  z-index: 90;
+}
+
+.card:not(.card-hover):not(.card-active) {
+  transition: all 0.3s ease, z-index 0s 0.3s;
 }
 
 .add-card {
@@ -12,6 +61,7 @@
   align-items: center;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  min-height: 300px;
 }
 
 .add-card:hover {
@@ -23,3 +73,27 @@
   color: var(--secondary-color);
 }
 
+.nav-button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  height: fit-content;
+  transition: background-color 0.2s ease;
+  font-size: 1.1rem;
+  z-index: 92;
+}
+
+.nav-button:hover {
+  background-color: var(--secondary-fade-color);
+}
+
+.nav-button-spacer {
+  width: 44px;
+}
+
+.invisible {
+  visibility: hidden;
+}
