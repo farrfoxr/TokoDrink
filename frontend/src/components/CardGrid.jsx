@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Card from './Card';
 import { useAdmin } from '../AdminContext.jsx';
 import { useCard } from './CardContext';
@@ -8,18 +8,37 @@ import './CardGrid.css';
 function CardGrid() {
   const { isAdmin } = useAdmin();
   const { currentPage, setCurrentPage, activeCardId, setActiveCardId, hoveredCardId } = useCard();
-  const cardsPerPage = 5;
-  const totalPages = Math.ceil(branchData.length / cardsPerPage);
+  const [isMobile, setIsMobile] = useState(false);
+  const [cardsPerPage, setCardsPerPage] = useState(5);
 
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      setIsMobile(width < 768);
+      if (width >= 1200) {
+        setCardsPerPage(5);
+      } else if (width >= 992) {
+        setCardsPerPage(4);
+      } else if (width >= 768) {
+        setCardsPerPage(3);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const totalPages = Math.ceil(branchData.length / cardsPerPage);
   const startIndex = (currentPage - 1) * cardsPerPage;
   const endIndex = startIndex + cardsPerPage;
-  const currentCards = branchData.slice(startIndex, endIndex);
+  const currentCards = isMobile ? branchData : branchData.slice(startIndex, endIndex);
 
-  const showNextButton = currentPage < totalPages;
-  const showPrevButton = currentPage > 1;
+  const showNextButton = !isMobile && currentPage < totalPages;
+  const showPrevButton = !isMobile && currentPage > 1;
   const showAddCard = isAdmin && currentPage === totalPages && currentCards.length < cardsPerPage;
 
-  const emptySlots = currentPage === totalPages ? 
+  const emptySlots = !isMobile && currentPage === totalPages ? 
     cardsPerPage - currentCards.length : 
     0;
 
@@ -38,19 +57,19 @@ function CardGrid() {
   }, [setActiveCardId]);
 
   return (
-    <div className="grid-container">
+    <div className={`grid-container ${isMobile ? 'mobile' : ''}`}>
       <div className={`backdrop ${activeCardId || hoveredCardId ? 'active' : ''}`}></div>
       <div className="grid-wrapper">
-        {showPrevButton ? (
+        {showPrevButton && (
           <button 
             className="nav-button"
             onClick={() => setCurrentPage(prev => prev - 1)}
           >
             ←
           </button>
-        ) : <div className="nav-button-spacer" />}
+        )}
         
-        <div className="card-grid">
+        <div className={`card-grid ${isMobile ? 'mobile' : ''}`}>
           {currentCards.map(branch => (
             <Card key={branch.id} {...branch} />
           ))}
@@ -67,14 +86,14 @@ function CardGrid() {
           ))}
         </div>
 
-        {showNextButton ? (
+        {showNextButton && (
           <button 
             className="nav-button"
             onClick={() => setCurrentPage(prev => prev + 1)}
           >
             →
           </button>
-        ) : <div className="nav-button-spacer" />}
+        )}
       </div>
     </div>
   );
