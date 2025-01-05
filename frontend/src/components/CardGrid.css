@@ -130,7 +130,7 @@
 
 @media (max-width: 767px) {
   .grid-container.mobile {
-    padding: 1rem;
+    padding: 1rem 0rem 1rem 1rem;
   }
 
   .grid-wrapper {
