@@ -36,11 +36,10 @@ function Carousel() {
           isActive={index === currentSlide}
         />
       ))}
-      <button className="carousel-control prev" onClick={prevSlide}>&lt;</button>
-      <button className="carousel-control next" onClick={nextSlide}>&gt;</button>
+      <button className="carousel-control prev" onClick={prevSlide}>‹</button>
+      <button className="carousel-control next" onClick={nextSlide}>›</button>
     </div>
   );
 }
 
 export default Carousel;
-

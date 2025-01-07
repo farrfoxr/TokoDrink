@@ -13,8 +13,11 @@
 }
 
 .footer-logo img {
-  max-height: 50px;
-  object-fit: contain;
+  object-fit: cover; /* Similar to background-size: cover */
+  object-position: center; /* Similar to background-position: center */
+  width: 7rem;
+  height: 3rem;
+  flex-shrink: 0;
 }
 
 .footer-contact {
@@ -71,7 +74,5 @@
     gap: 2rem;
   }
   
-  .footer-logo {
-    margin-bottom: 1rem;
-  }
+
 }
