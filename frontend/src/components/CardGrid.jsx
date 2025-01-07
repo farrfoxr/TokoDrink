@@ -57,45 +57,48 @@ function CardGrid() {
   }, [setActiveCardId]);
 
   return (
-    <div className={`grid-container ${isMobile ? 'mobile' : ''}`}>
-      <div className={`backdrop ${activeCardId || hoveredCardId ? 'active' : ''}`}></div>
-      <div className="grid-wrapper">
-        {showPrevButton && (
-          <button 
-            className="nav-button"
-            onClick={() => setCurrentPage(prev => prev - 1)}
-          >
-            ←
-          </button>
-        )}
-        
-        <div className={`card-grid ${isMobile ? 'mobile' : ''}`}>
-          {currentCards.map(branch => (
-            <Card key={branch.id} {...branch} />
-          ))}
-          {showAddCard && (
-            <div className="card add-card">
-              <div className="add-card-content">
-                <h3>Add a New Location</h3>
-                <p>Click to add a new branch</p>
-              </div>
-            </div>
+    <section className="locations-section">
+      <h2 className="section-title">Our Locations</h2>
+      <div className={`grid-container ${isMobile ? 'mobile' : ''}`}>
+        <div className={`backdrop ${activeCardId || hoveredCardId ? 'active' : ''}`}></div>
+        <div className="grid-wrapper">
+          {showPrevButton && (
+            <button 
+              className="nav-button"
+              onClick={() => setCurrentPage(prev => prev - 1)}
+            >
+              ←
+            </button>
           )}
-          {[...Array(emptySlots)].map((_, index) => (
-            <div key={`empty-${index}`} className="card invisible" />
-          ))}
-        </div>
+          
+          <div className={`card-grid ${isMobile ? 'mobile' : ''}`}>
+            {currentCards.map(branch => (
+              <Card key={branch.id} {...branch} />
+            ))}
+            {showAddCard && (
+              <div className="card add-card">
+                <div className="add-card-content">
+                  <h3>Add a New Location</h3>
+                  <p>Click to add a new branch</p>
+                </div>
+              </div>
+            )}
+            {[...Array(emptySlots)].map((_, index) => (
+              <div key={`empty-${index}`} className="card invisible" />
+            ))}
+          </div>
 
-        {showNextButton && (
-          <button 
-            className="nav-button"
-            onClick={() => setCurrentPage(prev => prev + 1)}
-          >
-            →
-          </button>
-        )}
+          {showNextButton && (
+            <button 
+              className="nav-button"
+              onClick={() => setCurrentPage(prev => prev + 1)}
+            >
+              →
+            </button>
+          )}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 
