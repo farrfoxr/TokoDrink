@@ -3,7 +3,7 @@ import CarouselItem from './CarouselItem.jsx';
 import './Carousel.css';
 
 const promoData = [
-  { id: 1, image: 'https://via.placeholder.com/1200x400', alt: 'Promo 1' },
+  { id: 1, image: '/bannerBackground.webp', alt: 'Promo 1' },
   { id: 2, image: 'https://via.placeholder.com/1200x400', alt: 'Promo 2' },
   { id: 3, image: 'https://via.placeholder.com/1200x400', alt: 'Promo 3' },
 ];
