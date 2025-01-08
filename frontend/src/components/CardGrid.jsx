@@ -15,12 +15,15 @@ function CardGrid() {
     const handleResize = () => {
       const width = window.innerWidth;
       setIsMobile(width < 768);
+      // Modified: Added condition for 2 cards
       if (width >= 1200) {
         setCardsPerPage(5);
       } else if (width >= 992) {
         setCardsPerPage(4);
       } else if (width >= 768) {
         setCardsPerPage(3);
+      } else {
+        setCardsPerPage(1);
       }
     };
 

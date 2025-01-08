@@ -89,5 +89,6 @@
   .admin-toggle {
     width: 100%;
     max-width: 200px;
+    display: none;
   }
 }

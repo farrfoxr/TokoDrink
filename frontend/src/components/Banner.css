@@ -1,28 +1,27 @@
 .banner {
-  position: relative; /* Create a positioning context for the pseudo-element */
+  position: relative;
   background-image: url('/bannerBackground.webp');
   background-size: cover;
   background-position: center;
-
   color: var(--main-color);
   padding: 3rem 1rem;
   text-align: center;
 }
 
 .banner::after {
-  content: ''; /* Required to create the pseudo-element */
-  position: absolute; /* Position it relative to the .banner */
+  content: '';
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.49); /* Semi-transparent overlay or any effect */
-  z-index: 1; /* Ensure the pseudo-element appears above the banner */
+  background: rgba(0, 0, 0, 0.49);
+  z-index: 1;
 }
 
 .banner * {
-  position: relative; /* Make them stack above the pseudo-element */
-  z-index: 2; /* Higher z-index to make sure they are above the pseudo-element */
+  position: relative;
+  z-index: 2;
 }
 
 .banner h1 {
@@ -37,5 +36,47 @@
 
 .banner p:nth-of-type(2)::before {
   content: '📍';
+}
+
+@media (max-width: 1024px) {
+  .banner h1 {
+    font-size: 2.2rem;
+  }
+
+  .banner p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    padding: 2.5rem 1rem;
+  }
+
+  .banner h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .banner p {
+    font-size: 0.9rem;
+    margin: 0.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    padding: 2rem 1rem;
+  }
+
+  .banner h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .banner p {
+    font-size: 0.8rem;
+    margin: 0.3rem;
+  }
 }
 

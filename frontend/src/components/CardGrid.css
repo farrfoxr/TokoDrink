@@ -61,8 +61,9 @@
   display: none;
 }
 
+/* Modified: Reduced card width for mobile view */
 .card-grid.mobile .card {
-  flex: 0 0 80%;
+  flex: 0 0 70%;
   scroll-snap-align: center;
   margin-right: 1rem;
 }
@@ -151,6 +152,19 @@
 @media (max-width: 991px) {
   .card-grid:not(.mobile) {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Modified: Added media query for 2 cards */
+@media (max-width: 767px) {
+  .card-grid:not(.mobile) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  .card-grid:not(.mobile) {
+    grid-template-columns: 1fr;
   }
 }
 
