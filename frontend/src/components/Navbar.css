@@ -80,6 +80,7 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 1rem;
+    position:relative;
   }
 
   .navbar-links li {
@@ -90,5 +91,24 @@
     width: 100%;
     max-width: 200px;
     display: none;
+  }
+
+  /* the two grey lines */
+  .navbar-links::before,
+  .navbar-links::after {
+    content: '';
+    position: absolute;
+    height: 1.4px; /* Thickness of the lines */
+    background-color: #d1d3d4; /* Line color */
+    width: 100%;
+  }
+
+  .navbar-links::before {
+    bottom: -1rem; /* Position the first line (adjust as needed) */
+  }
+
+  .navbar-links::after {
+    --line-gap: 4px;
+    bottom: calc(-1rem - var(--line-gap));
   }
 }
