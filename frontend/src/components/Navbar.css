@@ -101,6 +101,7 @@
     height: 1.4px; /* Thickness of the lines */
     background-color: #d1d3d4; /* Line color */
     width: 100%;
+    opacity: 50%
   }
 
   .navbar-links::before {
