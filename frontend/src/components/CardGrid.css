@@ -12,7 +12,7 @@
 }
 
 .section-title::after {
-  content: '';
+  content: "";
   position: absolute;
   left: -10%;
   right: -10%;
@@ -61,7 +61,6 @@
   display: none;
 }
 
-/* Modified: Reduced card width for mobile view */
 .card-grid.mobile .card {
   flex: 0 0 70%;
   scroll-snap-align: center;
@@ -95,31 +94,13 @@
   transition: all 0.3s ease, z-index 0s;
 }
 
-.card-hover, .card-active {
+.card-hover,
+.card-active {
   z-index: 90;
 }
 
 .card:not(.card-hover):not(.card-active) {
   transition: all 0.3s ease, z-index 0s 0.3s;
-}
-
-.add-card {
-  border: 2px dashed var(--secondary-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  min-height: 300px;
-}
-
-.add-card:hover {
-  background-color: rgba(76, 175, 80, 0.1);
-}
-
-.add-card-content {
-  text-align: center;
-  color: var(--secondary-color);
 }
 
 .nav-button {
@@ -155,7 +136,6 @@
   }
 }
 
-/* Modified: Added media query for 2 cards */
 @media (max-width: 767px) {
   .card-grid:not(.mobile) {
     grid-template-columns: repeat(2, 1fr);

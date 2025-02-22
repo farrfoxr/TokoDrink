@@ -1,7 +1,7 @@
 .navbar {
   background-color: var(--main-color);
   padding: 1rem 0;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 100%;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .navbar-brand {
-  background-image: url('/tokodrinkLogo.svg');
+  background-image: url("/tokodrinkLogo.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -47,24 +47,6 @@
   color: var(--secondary-color);
 }
 
-.admin-toggle {
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
-  font-size: 1rem;
-  background-color: var(--secondary-color);
-  color: var(--main-color);
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.admin-toggle:hover {
-  background-color: var(--secondary-fade-color);
-}
-
 @media (max-width: 768px) {
   .navbar-content {
     flex-direction: column;
@@ -80,32 +62,25 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 1rem;
-    position:relative;
+    position: relative;
   }
 
   .navbar-links li {
     margin: 0.25rem 0.5rem;
   }
 
-  .admin-toggle {
-    width: 100%;
-    max-width: 200px;
-    display: none;
-  }
-
-  /* the two grey lines */
   .navbar-links::before,
   .navbar-links::after {
-    content: '';
+    content: "";
     position: absolute;
-    height: 1.4px; /* Thickness of the lines */
-    background-color: #d1d3d4; /* Line color */
+    height: 1.4px;
+    background-color: #d1d3d4;
     width: 100%;
-    opacity: 50%
+    opacity: 50%;
   }
 
   .navbar-links::before {
-    bottom: -1rem; /* Position the first line (adjust as needed) */
+    bottom: -1rem;
   }
 
   .navbar-links::after {
@@ -113,3 +88,4 @@
     bottom: calc(-1rem - var(--line-gap));
   }
 }
+

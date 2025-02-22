@@ -41,32 +41,6 @@
   color: #666;
 }
 
-.card-actions {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  display: none;
-  z-index: 101;
-}
-
-.card:hover .card-actions {
-  display: flex;
-}
-
-.edit-btn, .delete-btn {
-  background-color: var(--secondary-color);
-  color: var(--main-color);
-  border: none;
-  padding: 0.25rem 0.5rem;
-  margin-left: 0.5rem;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.delete-btn {
-  background-color: #f44336;
-}
-
 .card-active {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
