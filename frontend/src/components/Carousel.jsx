@@ -3,9 +3,9 @@ import CarouselItem from './CarouselItem.jsx';
 import './Carousel.css';
 
 const promoData = [
-  { id: 1, image: '/bannerBackground.webp', alt: 'Promo 1' },
-  { id: 2, image: 'https://via.placeholder.com/1200x400', alt: 'Promo 2' },
-  { id: 3, image: 'https://via.placeholder.com/1200x400', alt: 'Promo 3' },
+  { id: 1, image: '/TokoDrink/bannerBackground.webp', alt: 'Promo 1' },
+  { id: 2, image: '/TokoDrink/carousel2.webp', alt: 'Promo 2' },
+  { id: 3, image: '/TokoDrink/carousel3.webp', alt: 'Promo 3' },
 ];
 
 function Carousel() {
