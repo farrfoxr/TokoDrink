@@ -6,7 +6,7 @@ function Footer() {
     <footer id="footer" className="footer">
       <div className="footer-content">
         <div className="footer-logo">
-          <img src="/tokodrinkLogoWhite.png" alt="Company Logo" />
+          <img src="/TokoDrink/tokodrinkLogoWhite.png" alt="Company Logo" />
         </div>
         
         <div className="footer-contact">
