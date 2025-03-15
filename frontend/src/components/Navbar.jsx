@@ -1,3 +1,5 @@
+"use client"
+
 import "./Navbar.css"
 
 function Navbar() {
@@ -34,6 +36,8 @@ function Navbar() {
             </a>
           </li>
         </ul>
+        {/* This empty div helps maintain the centering */}
+        <div className="navbar-placeholder"></div>
       </div>
     </nav>
   )

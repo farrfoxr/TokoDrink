@@ -13,6 +13,7 @@
   max-width: 1500px;
   margin: 0 auto;
   padding: 0 1rem;
+  position: relative;
 }
 
 .navbar-brand {
@@ -25,11 +26,21 @@
   flex-shrink: 0;
 }
 
+/* This placeholder takes up the same space as the brand */
+.navbar-placeholder {
+  width: 6rem;
+  flex-shrink: 0;
+  visibility: hidden;
+}
+
 .navbar-links {
   display: flex;
   list-style-type: none;
   margin: 0;
   padding: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .navbar-links li {
@@ -58,11 +69,17 @@
     margin-bottom: 1rem;
   }
 
+  .navbar-placeholder {
+    display: none;
+  }
+
   .navbar-links {
+    position: static;
+    transform: none;
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 1rem;
-    position: relative;
+    width: 100%;
   }
 
   .navbar-links li {
